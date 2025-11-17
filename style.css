@@ -1,0 +1,56 @@
+/* Remove default browser margin/padding */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #333;
+}
+
+/* NEW LAYOUT:
+  1. Make the body a flex container
+  2. Set its direction to column (stacking vertically)
+  3. Make it take up the full viewport height
+*/
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Use min-height to be safe */
+}
+
+/* Style the new header */
+header {
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #ddd;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+/* THE MOST IMPORTANT PART:
+  This tells the map to "grow" and take up
+  all the available space left over by the
+  header and footer.
+*/
+#map {
+  flex-grow: 1; /* This is the magic */
+  width: 100%;
+  background-color: #eee; /* Shows a light gray while map loads */
+}
+
+/* Style the new footer */
+footer {
+  padding: 10px 20px;
+  background-color: #f8f8f8;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 0.9em;
+}
+
+footer p {
+  margin: 0;
+}
